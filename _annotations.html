@@ -20,15 +20,15 @@
   </style>
   <h1>Przygotowanie do WebService</h1></br>
   <ul>
-  <li>Dodać kolejkę do serwera HTTP</li>
-  <li>Upewnić się klient HTTP poprawnie dodawaje elementy do kolejki</li>
-  <li>Upewnić się klient HTTP poprawnie usuwa elementy do kolejki</li>
+  <li>Zaimplementuj klienta do wysyłania maila do serwera</li>
+  <li>Scal serwer smtp z klientem HTTP służącym do dodawania komunikatów do kolejki</li>
   </ul>
   <h2>Extra</h2>
   <ul>
-    <li>Zaimplementować metodę GET /queue_info w serwerze HTTP, która zwróci informacje o ilości elementów w kolejce</li>
-    <li>Dodać timestamp do elementu kolejki</li>
-    <li>Presistent storage dla kolejki (wczytywane przy stracie programu)</li>
-    <li>Grupowanie komunikatów w kolejce na postawie timestampa (np. 5 jednakowych elementów dodanych w czasie mniejszym niż 1 sec, skutkuje dodaniem tylko jednego elementu)</li>
+    <li>Klient smtp wczytuje wiadomości email z stdin</li>
+    <li>Klient i serwer smtp ustawiają adres z lini argumentów</li>
+    <li>Walidacja wiadomości email po stronie serwera (Tylko emaila zaczynające się od ALERT powinny być przetworzone)</li>
+    <li>Dodać do serwera autoryzację adresów email na podstawie pliku konfiguracyjnego</li>
+    <li>Obsługa błędów po stronie serwera smtp w przypadku gdy nie może dodać komunikatu do kolejki</li>
   </ul>
 </details>
