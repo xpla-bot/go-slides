@@ -1,3 +1,48 @@
 <details>
-  <h1>Tyle jeśli chodzi o wstęp - a co dzisiaj?</h1>
+  <style type="text/css">
+    .slide {
+      white-space: pre;
+      font-family: monospace;
+  	}
+    h1 {
+      text-align: center;
+    }
+	</style>
+	<h1>Architektura</h1>
+  <div class="slide">
+          ,-.
+          `-' 
+          /|\ 
+           |  
+          / \ 
+      Alice Server
+           +
+           |
+           |
+           | send e-mail alert
+           |
+           |
+           |
+    +------v-------+             +---------------+            +---------------+
+    |              |             |               |            |               |
+    |              |             |               |            |               |
+    |    SMTPD     |             |     Queue     |            |   Sms alert   |
+    |              +------------->               <------------+               |
+    |              |             |               |            |               |
+    |              |             |               |            |               |
+    +--------------+             +---------------+            +---------------+
+                                                                      |
+                                                                      |
+                                                                      |
+                                                                      | get sms text
+                                                                      |
+                                                                      |
+                                                                      v
+                                                                   Bob Admin
+                                                                     ,-.
+                                                                     `-'
+                                                                     /|\
+                                                                      |
+                                                                     / \
+	</div>
 </details>
