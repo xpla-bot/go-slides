@@ -20,22 +20,15 @@
   </style>
   <h1>Przygotowanie do WebService</h1></br>
   <ul>
-  <li>Rozgrzewka - dopisać obsługę GET do klienta</li>
-  <li>Napisać serwer HTTP dla kolejki
-    <ul class="in">
-      <li>POST /enqueu/:email</li>
-      <li>GET /dequeue</li>
-    </ul>
-  </li>
-  <li>Napisać klienta HTTP - dodawanie do kolejki</li>
-  <li>Napisać klienta HTTP - usuwanie z kolejki</li>
+  <li>Dodać kolejkę do serwera HTTP</li>
+  <li>Upewnić się klient HTTP poprawnie dodawaje elementy do kolejki</li>
+  <li>Upewnić się klient HTTP poprawnie usuwa elementy do kolejki</li>
   </ul>
   <h2>Extra</h2>
   <ul>
-    <li>Ustawianie url klienta z lini poleceń np. argument --url (hint: flag package)</li>
-    <li>Wczytywanie konfiguracji serwera z pliku json/yaml</li>
-    <li>Whitelist/Blacklist adresów IP po stronie serwera</li>
-    <li>Whitelist/Blacklist adresów email po stronie serwera</li>
-    <li>Hot reload serwera (zero downtime)</li>
+    <li>Zaimplementować metodę GET /queue_info w serwerze HTTP, która zwróci informacje o ilości elementów w kolejce</li>
+    <li>Dodać timestamp do elementu kolejki</li>
+    <li>Presistent storage dla kolejki (wczytywane przy stracie programu)</li>
+    <li>Grupowanie komunikatów w kolejce na postawie timestampa (np. 5 jednakowych elementów dodanych w czasie mniejszym niż 1 sec, skutkuje dodaniem tylko jednego elementu)</li>
   </ul>
 </details>
