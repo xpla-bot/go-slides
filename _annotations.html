@@ -3,46 +3,39 @@
     .slide {
       white-space: pre;
       font-family: monospace;
-  	}
+    }
     h1 {
       text-align: center;
     }
-	</style>
-	<h1>Architektura</h1>
-  <div class="slide">
-          ,-.
-          `-' 
-          /|\ 
-           |  
-          / \ 
-      Alice Server
-           +
-           |
-           |
-           | send e-mail alert
-           |
-           |
-           |
-    +------v-------+             +---------------+            +---------------+
-    |              |             |               |            |               |
-    |              |             |               |            |               |
-    |    SMTPD     |             |     Queue     |            |   Sms alert   |
-    |              +------------->               <------------+               |
-    |              |             |               |            |               |
-    |              |             |               |            |               |
-    +--------------+             +---------------+            +---------------+
-                                                                      |
-                                                                      |
-                                                                      |
-                                                                      | get sms text
-                                                                      |
-                                                                      |
-                                                                      v
-                                                                   Bob Admin
-                                                                     ,-.
-                                                                     `-'
-                                                                     /|\
-                                                                      |
-                                                                     / \
-	</div>
+    ul {
+      list-style-type: circle;
+      list-style-position:inside;
+    }
+    li {
+      border: 3px solid white ;
+    }
+    .in {
+      list-style-type: disc;
+    }
+  </style>
+  <h1>Przygotowanie do WebService</h1></br>
+  <ul>
+  <li>Rozgrzewka - dopisać obsługę GET do klienta</li>
+  <li>Napisać serwer HTTP dla kolejki
+    <ul class="in">
+      <li>POST /enqueu/:email</li>
+      <li>GET /dequeue</li>
+    </ul>
+  </li>
+  <li>Napisać klienta HTTP - dodawanie do kolejki</li>
+  <li>Napisać klienta HTTP - usuwanie z kolejki</li>
+  </ul>
+  <h2>Extra</h2>
+  <ul>
+    <li>Ustawianie url klienta z lini poleceń np. argument --url (hint: flag package)</li>
+    <li>Wczytywanie konfiguracji serwera z pliku json/yaml</li>
+    <li>Whitelist/Blacklist adresów IP po stronie serwera</li>
+    <li>Whitelist/Blacklist adresów email po stronie serwera</li>
+    <li>Hot reload serwera (zero downtime)</li>
+  </ul>
 </details>
