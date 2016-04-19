@@ -1,0 +1,73 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Implementacja kolejki</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="queue.go" >
+        	<script id="queue.go" highlight="1-50" type="application/octetstream" src="009/queue.go"></script>
+	<script id="http_client.go" type="application/octetstream" src="007/http_client.go"></script>
+	<script id="httpd.go" type="application/octetstream" src="006/httpd.go"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview runner="html"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Implementacja kolejki</h1></header>
+            <details>
+  <style type="text/css">
+    .slide {
+      white-space: pre;
+      font-family: monospace;
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      list-style-type: circle;
+      list-style-position:inside;
+    }
+    li {
+      border: 3px solid white ;
+    }
+    .in {
+      list-style-type: disc;
+    }
+  </style>
+  <h1>Przygotowanie do WebService</h1></br>
+  <ul>
+  <li>Dodać kolejkę do serwera HTTP</li>
+  <li>Upewnić się klient HTTP poprawnie dodawaje elementy do kolejki</li>
+  <li>Upewnić się klient HTTP poprawnie usuwa elementy do kolejki</li>
+  </ul>
+  <h2>Extra</h2>
+  <ul>
+    <li>Zaimplementować metodę GET /queue_info w serwerze HTTP, która zwróci informacje o ilości elementów w kolejce</li>
+    <li>Dodać timestamp do elementu kolejki</li>
+    <li>Presistent storage dla kolejki (wczytywane przy stracie programu)</li>
+    <li>Grupowanie komunikatów w kolejce na postawie timestampa (np. 5 jednakowych elementów dodanych w czasie mniejszym niż 1 sec, skutkuje dodaniem tylko jednego elementu)</li>
+  </ul>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

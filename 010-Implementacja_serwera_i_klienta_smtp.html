@@ -1,0 +1,75 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Implementacja serwera i klienta smtp</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="smtp_client.go" >
+        	<script id="smtp_client.go" highlight="1-48" type="application/octetstream" src="010/smtp_client.go"></script>
+	<script id="smtpd.go" highlight="1-24" type="application/octetstream" src="010/smtpd.go"></script>
+	<script id="http_client.go" type="application/octetstream" src="007/http_client.go"></script>
+	<script id="httpd.go" type="application/octetstream" src="006/httpd.go"></script>
+	<script id="queue.go" type="application/octetstream" src="009/queue.go"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview runner="html"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Implementacja serwera i klienta smtp</h1></header>
+            <details>
+  <style type="text/css">
+    .slide {
+      white-space: pre;
+      font-family: monospace;
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      list-style-type: circle;
+      list-style-position:inside;
+    }
+    li {
+      border: 3px solid white ;
+    }
+    .in {
+      list-style-type: disc;
+    }
+  </style>
+  <h1>Przygotowanie do WebService</h1></br>
+  <ul>
+  <li>Zaimplementuj klienta do wysyłania maila do serwera</li>
+  <li>Scal serwer smtp z klientem HTTP służącym do dodawania komunikatów do kolejki</li>
+  </ul>
+  <h2>Extra</h2>
+  <ul>
+    <li>Klient smtp wczytuje wiadomości email z stdin</li>
+    <li>Klient i serwer smtp ustawiają adres z lini argumentów</li>
+    <li>Walidacja wiadomości email po stronie serwera (Tylko emaila zaczynające się od ALERT powinny być przetworzone)</li>
+    <li>Dodać do serwera autoryzację adresów email na podstawie pliku konfiguracyjnego</li>
+    <li>Obsługa błędów po stronie serwera smtp w przypadku gdy nie może dodać komunikatu do kolejki</li>
+  </ul>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  
